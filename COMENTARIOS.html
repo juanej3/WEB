@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>DRIP BARATO</title>
+        <link rel="icon" href="WhatsApp Image 2024-04-22 at 11.44.35 AM.jpeg">
+        <style>
+            body {
+              background-image: url('unnamed.jpg'); 
+              background-size: cover; 
+              background-position: center; 
+              background-repeat: no-repeat; 
+            }
+        
+            
+            .container {
+              width: 80%;
+              margin: 50px auto;
+              padding: 20px;
+              background-color: rgba(255, 255, 255, 0.8); 
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+          </style>
+    </head>
+    <body>
+        <div id="chat-box">
+          
+        </div>
+        <form id="message-form">
+            <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+            <button type="submit">Enviar</button>
+        </form>
+        <script>
+                 const chatBox = document.getElementById('chat-box');
+            const messageForm = document.getElementById('message-form');
+            const messageInput = document.getElementById('message-input');
+    
+            messageForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                const message = messageInput.value;
+                appendMessage('Tú', message); 
+                messageInput.value = ''; 
+            });
+    
+            function appendMessage(sender, message) {
+                const messageElement = document.createElement('div');
+                messageElement.innerText = ${sender}: ${message};
+                chatBox.appendChild(messageElement);
+            }
+        </script>
+        <button onclick="goBack()">Regresar</button>
+
+        <script>
+          function goBack() {
+            window.history.back();
+          }
+        </script>
+    
+    </body>
+</html>
